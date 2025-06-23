@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Portfolio</title>
+    <!-- External stylesheet and favicon -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/logo.2.png" type="image/png">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Inline styles for Spline 3D viewer, content positioning, and loader -->
+
+    <style>
+        /* Styles for the Spline 3D viewer container */
+        .spline-container {
+            margin-top: 5%;
+            margin-right: -500px;
+            top: 30px;
+            right: 20px;
+            width: 100vw;
+            height: 100vh;
+            z-index: 500;
+            position: absolute;
+            right: 10%;
+            top: 0;
+            background: transparent;
+        }
+
+        /* Styles for the Spline viewer element */
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        /* Styles for the main content container */
+        .content {
+            position: relative;
+            height: 80vh;
+            max-width: 40rem;
+            margin-left: 10%;
+            z-index: 999;
+            padding-right: 100px;
+        }
+
+        /* Loader overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, black, #5300a0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.2s ease;
+        }
+
+        .loader-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* loader */
+        .loader {
+            width: fit-content;
+            font-size: 50px;
+            line-height: 1.5;
+            font-family: system-ui, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #dedede00;
+            -webkit-text-stroke: 1px #06d1ff;
+            background:
+                radial-gradient(1.13em at 50% 1.6em, #74e2fb 99%, #ffffff00 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+                radial-gradient(1.13em at 50% -0.8em, #ffffff00 99%, #3a6dfa 101%) 50% .8em/3.2em 100% repeat-x text;
+            animation: l9 2s linear infinite;
+        }
+
+        .loader:before {
+            content: "AHMAD SHAHZAD";
+        }
+
+        @keyframes l9 {
+            to {
+                background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) .8em
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader overlay -->
+    <div class="loader-overlay" id="loaderOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Anchor for home section -->
+    <div id="home"></div>
+
+    <!-- Spline 3D viewer container -->
+    <div class="spline-container">
+        <spline-viewer url="https://prod.spline.design/0u1FzZxwTaILdyaN/scene.splinecode"></spline-viewer>
+    </div>
+
+    <!-- Header with name, navigation, and CV download button -->
+    <header>
+        <h1><span>AHMAD</span> <span>شہزاد</span></h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="nav-menu">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+        <button class="btn-signing">DOWNLOAD CV</button>
+    </header>
+
+    <!-- Main content section with introduction -->
+    <div class="content">
+        <h1>HI,<br>I'm <span>AHMAD SHAHZAD</span></h1>
+        <!-- Typed.js placeholder for dynamic text -->
+        <div id="typed"></div>
+        <p class="description">
+            I’m a Frontend Developer who makes clean and perfect-looking websites with cool animations. I’m also
+            learning about the future of AI with Agentic and Robotic Intelligence.
+        </p>
+        <!-- Container for Hire Me button and social icons -->
+        <div class="hire-me-container">
+            <button class="button">Hire Me</button>
+            <div class="box-icons">
+                <a href="https://linkedin.com/in/ahmad-shahzad-14f24"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/923001234567"><i class="fab fa-whatsapp"></i></a>
+                <a href="/cdn-cgi/l/email-protection#46272e2b272268352e272e3c272206233e272b362a236825292b"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://github.com/ahmadshahzad"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/ahmadshahzad"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main sections for About, Skills, Projects, and Contact -->
+    <main>
+        <section class="about-section" id="about">
+            <div class="about-wrapper">
+                <h2 class="glitch-title">My About</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p><span class="intro-tag">// Frontend Dev + AI Explorer</span></p>
+                        <p>
+                            Hey, I’m <strong>Ahmad Shahzad</strong> — a curious mind with a keyboard, building
+                            interactive experiences on the web and exploring the future of AI. I'm not just coding
+                            pixels; I'm crafting smooth, responsive interfaces that users love.
+                        </p>
+                        <p>
+                            Currently pursuing <strong>BS in Artificial Intelligence</strong> (2023–2027) at the
+                            University of Agriculture Peshawar, I fuse creativity with logic, one project at a time. My
+                            path blends code, design, and a fascination with agentic intelligence.
+                        </p>
+                        <p>
+                            From <em>Divine Coders</em> to <strong>PIAIC</strong>, my mission is clear: create beautiful
+                            things that solve real problems.
+                        </p>
+                        <a href="#projects" class="about-btn">View My Work</a>
+                    </div>
+                    <div class="about-visual">
+                        <img src="./img/Ahmad.png" alt="Ahmad Shahzad" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills-section part -->
+        <section id="skills" class="skills-section">
+            <div class="skills-title">My Skills</div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/html-5.png" alt="HTML">
+                    <h4>HTML</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/css3.png" alt="CSS">
+                    <h4>CSS</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/javascript.png" alt="JavaScript">
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/react-native.png" alt="React">
+                    <h4>React</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/python.png" alt="Python">
+                    <h4>Python</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/web.png" alt="Web Development">
+                    <h4>Web Development</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/database.png" alt="Database Management">
+                    <h4>Oracle SQL</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/microsoft-office-2019.png" alt="Microsoft Office">
+                    <h4>Microsoft Office</h4>
+                </div>
+                <div class="skill-card">
+                    <img src="https://img.icons8.com/color/50/000000/adobe-photoshop.png" alt="Adobe Photoshop">
+                    <h4>Adobe Photoshop</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects section with slider -->
+        <section id="projects" class="projects-section">
+            <h3 class="projects-title">My Projects</h3>
+            <section class="Projects">
+                <div class="sliderMain">
+                    <!-- Slider container for project cards -->
+                    <div class="slider" id="slider"></div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact section with contact info and form -->
+        <!-- Anchor for contact section -->
+        <div id="contact"></div>
+        <section class="contact-section">
+            <h3 class="contact-title">My Contact</h3>
+            <div class="contact-grid">
+                <div class="contact-image">
+                    <img src="./img/Ahmad.png" alt="Contact Image">
+                </div>
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="message-btn">Contact Us</button>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>Contact : </strong> 03334067991</p>
+                        <p><strong>Gmail : </strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                data-cfemail="44252c292520372c252c3e2520042329252d286a272b29">ahmadshahzad2414@gmail.com</a>
+                        </p>
+                        <div class="social-links">
+
+                            <a href="https://linkedin.com/in/ahmad-shahzad-14f24"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://wa.me/923001234567"><i class="fab fa-whatsapp"></i></a>
+                            <a href="/cdn-cgi/l/email-protection#46272e2b272268352e272e3c272206233e272b362a236825292b"><i
+                                    class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/ahmadshahzad"><i class="fab fa-github"></i></a>
+                            <a href="https://twitter.com/ahmadshahzad"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with copyright and social media links -->
+    <footer>
+        <h3>© 2025 Ahmad Shahzad</h3>
+
+    </footer>
+
+    <!-- External scripts for Spline viewer and Typed.js -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.10/build/spline-viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- JavaScript for Typed.js, project slider, and loader -->
+    <script>
+        // Hide loader after page load
+        window.addEventListener('load', () => {
+            const loaderOverlay = document.getElementById('loaderOverlay');
+            loaderOverlay.classList.add('hidden');
+            setTimeout(() => {
+                loaderOverlay.style.display = 'none';
+            }, 500); // Match transition duration
+        });
+
+        // Initialize Typed.js for dynamic text animation
+        document.addEventListener('DOMContentLoaded', () => {
+            new Typed('#typed', {
+                strings: ['Frontend Developer', 'Agentic And Robotic AI Engineer'],
+                typeSpeed: 70,
+                backSpeed: 70,
+                backDelay: 1000,
+                loop: true
+            });
+        });
+
+        // Project slider data
+        const slides = [
+            {
+                image: src = "./img/Age_calculator.png",
+                title: "Age_calculator",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./alpha coders.png",
+                title: "E-Commerce Store",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./calculator.png",
+                title: "Calculator",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./clock.png",
+                title: "Clock",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./Country API.png",
+                title: "Country APIs",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./facebook.png",
+                title: "Facebook Clone",
+                para: "A modern website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./FoodPanda.png",
+                title: "FoodPanda Clone",
+                para: "A modern food delivery website for Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./kids_To_Do_List.png",
+                title: "Kids To-Do List",
+                para: "A fun and interactive to-do list app for kids by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./log.png",
+                title: "Log Tracker",
+                para: "A simple logging application by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./Missing Letter Game.png",
+                title: "Missing Letter Game",
+                para: "An educational game for learning letters by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./netflix.png",
+                title: "Netflix Clone",
+                para: "A streaming platform replica by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./Password_generator.png",
+                title: "Password Generator",
+                para: "A secure password creation tool by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./QR_Code_Generator.png",
+                title: "QR Code Generator",
+                para: "A tool for generating QR codes by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./Taskboard.png",
+                title: "Taskboard",
+                para: "A productivity task management app by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./Text to Speech.png",
+                title: "Text to Speech",
+                para: "A text-to-speech conversion tool by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            },
+            {
+                image: src = "./img/./word_counter.png",
+                title: "Word Counter",
+                para: "A simple word counting tool by Devine Coders.",
+                src: "https://divinecoders.vercel.app/",
+            }
+        ];
+
+        // Slider state
+        let activeIndex = 4;
+
+        // Calculate styles for slider items based on their position
+        function calculateStyle(index) {
+            let stt = 0;
+            let style = {};
+
+            if (index === activeIndex) {
+                return {
+                    transform: "none",
+                    zIndex: 1,
+                    filter: "none",
+                    opacity: 1,
+                };
+            }
+
+            if (index > activeIndex) {
+                stt = index - activeIndex;
+                style.transform = `translateX(${280 * stt}px) scale(${0.8 - 0.1 * stt}) perspective(16px) rotateY(-1deg)`;
+            } else {
+                stt = activeIndex - index;
+                style.transform = `translateX(${-230 * stt}px) scale(${0.8 - 0.1 * stt}) perspective(16px) rotateY(1deg)`;
+            }
+
+            style.zIndex = -stt;
+            style.filter = "blur(4px)";
+            style.opacity = stt > 2 ? 0 : 0.6;
+
+            return style;
+        }
+
+        // Create slider items dynamically
+        function createSlider() {
+            const slider = document.getElementById("slider");
+
+            slides.forEach((slide, index) => {
+                const item = document.createElement("div");
+                item.className = "item";
+                item.innerHTML = `
+                    <div class="image-container">
+                        <img src="${slide.image}" alt="${slide.title}" onerror="this.src='https://via.placeholder.com/400x300';">
+                    </div>
+                    <div class="content">
+                        <h2>${slide.title}</h2>
+                        <p>${slide.para}</p>
+                        <a href="${slide.src}" target="_blank" class="cardBtn">View</a>
+                    </div>
+                `;
+                slider.appendChild(item);
+            });
+
+            // Add navigation buttons
+            slider.innerHTML += `
+                <button class="nav-btn prev" onclick="handlePrev()"><</button>
+                <button class="nav-btn next" onclick="handleNext()">></button>
+            `;
+        }
+
+        // Update slider styles
+        function updateSlider() {
+            const items = document.querySelectorAll(".item");
+            items.forEach((item, index) => {
+                const style = calculateStyle(index);
+                item.style.transform = style.transform;
+                item.style.zIndex = style.zIndex;
+                item.style.filter = style.filter;
+                item.style.opacity = style.opacity;
+            });
+        }
+
+        // Navigate to next slide
+        function handleNext() {
+            activeIndex = Math.min(activeIndex + 1, slides.length - 1);
+            updateSlider();
+        }
+
+        // Navigate to previous slide
+        function handlePrev() {
+            activeIndex = Math.max(activeIndex - 1, 0);
+            updateSlider();
+        }
+
+        // Initialize slider
+        createSlider();
+        updateSlider();
+        // Expose navigation functions to global scope
+        window.handleNext = handleNext;
+        window.handlePrev = handlePrev;
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'953d0b3e3ee0fd1b',t:'MTc1MDYwODkyMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();
+    </script>
+
+
+
+</body>
+
+</html>
