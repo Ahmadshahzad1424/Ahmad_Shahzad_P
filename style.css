@@ -58,8 +58,7 @@ spline-viewer {
 /* Loader */
 /* ========================================================================= */
 
-/* Loader overlay */
-.loader-overlay {
+/* Loader overlay */.loader-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,16 +80,16 @@ spline-viewer {
 /* loader */
 .loader {
   width: fit-content;
-  font-size: 50px;
+  font-size: clamp(20px, 8vw, 40px); /* Responsive font size */
   line-height: 1.5;
   font-family: system-ui, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #dedede00;
   -webkit-text-stroke: 1px #06d1ff;
-  background: radial-gradient(1.13em at 50% 1.6em, #74e2fb 99%, #ffffff00 101%)
-      calc(50% - 1.6em) 0/3.2em 100% text,
-    radial-gradient(1.13em at 50% -0.8em, #ffffff00 99%, #3a6dfa 101%) 50% 0.8em/3.2em
+  background: radial-gradient(0.9em at 50% 1.2em, #74e2fb 99%, #ffffff00 101%)
+      calc(50% - 1.2em) 0/2.4em 100% text,
+    radial-gradient(0.9em at 50% -0.6em, #ffffff00 99%, #3a6dfa 101%) 50% 0.6em/2.4em
       100% repeat-x text;
   animation: l9 2s linear infinite;
 }
@@ -101,7 +100,25 @@ spline-viewer {
 
 @keyframes l9 {
   to {
-    background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) 0.8em;
+    background-position: calc(50% + 1.2em) 0, calc(50% + 2.4em) 0.6em;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .loader {
+    font-size: clamp(16px, 6vw, 28px); /* Smaller font for mobile */
+    -webkit-text-stroke: 0.5px #06d1ff; /* Thinner stroke for clarity */
+    background: radial-gradient(0.7em at 50% 1em, #74e2fb 99%, #ffffff00 101%)
+        calc(50% - 1em) 0/2em 100% text,
+      radial-gradient(0.7em at 50% -0.5em, #ffffff00 99%, #3a6dfa 101%) 50% 0.5em/2em
+        100% repeat-x text;
+  }
+
+  @keyframes l9 {
+    to {
+      background-position: calc(50% + 1em) 0, calc(50% + 2em) 0.5em;
+    }
   }
 }
 /* ========================================================================= */
